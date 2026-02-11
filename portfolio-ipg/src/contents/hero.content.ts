@@ -1,4 +1,6 @@
 import type { I18nText, SocialLink } from "./types";
+import resumePT from "../assets/resume/IgorPereira_S-PT-BR.pdf";
+import resumeEN from "../assets/resume/IgorPereira_S-EN.pdf";
 
 export const heroContent = {
   name: {
@@ -22,8 +24,8 @@ export const heroContent = {
   } satisfies I18nText,
 
   cvHref: {
-    pt: "/cv-pt.pdf", 
-    en: "/cv-en.pdf", 
+    pt: resumePT, 
+    en: resumeEN, 
   } satisfies I18nText,
 
   socialLinks: [
