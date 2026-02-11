@@ -1,4 +1,5 @@
 import { useLanguage } from "../contexts/LanguageContext";
+import { aboutContent } from "../contents/about.content"; 
 import {
   Code2, Cpu, Coffee, FileCode, Palette, Server,
   Database, Container, GitBranch, Cloud,
@@ -10,41 +11,37 @@ import {
   PopoverTrigger,
 } from "../components/ui/popover";
 
-interface SkillCard {
+interface SkillCardProps {
   name: string;
   icon: React.ReactNode;
   popover?: string[];
 }
 
+const toolsIcons: Record<string, React.ElementType> = {
+  "Python": Code2,
+  "C/C++": Cpu,
+  "Java & Spring Boot": Coffee,
+  "JavaScript/TypeScript": FileCode,
+  "React & Tailwind": Palette,
+  "ExpressJS": Server,
+  "PostgreSQL & MongoDB": Database,
+  "Docker": Container,
+  "Git": GitBranch,
+  "AWS Services": Cloud,
+};
+
+const focusIcons: Record<string, React.ElementType> = {
+  "Software engineering": Cog,
+  "Data science": BarChart3,
+  "Digital image processing": Image,
+  "Internet of Things": Wifi,
+  "Natural language processing": MessageSquare,
+};
+
 const AboutSection = () => {
-  const { t } = useLanguage();
+  const { tr, language } = useLanguage();
 
-  const tools: SkillCard[] = [
-    { name: "Python", icon: <Code2 size={16} /> },
-    { name: "C / C++", icon: <Cpu size={16} /> },
-    { name: "Java & Spring Boot", icon: <Coffee size={16} /> },
-    { name: "JavaScript / TypeScript", icon: <FileCode size={16} /> },
-    { name: "React & Tailwind", icon: <Palette size={16} /> },
-    { name: "Node.js (Express)", icon: <Server size={16} /> },
-    { name: "PostgreSQL & MongoDB", icon: <Database size={16} /> },
-    { name: "Docker", icon: <Container size={16} /> },
-    { name: "Git & Linux", icon: <GitBranch size={16} /> },
-    { name: "AWS Services", icon: <Cloud size={16} />, popover: ["EC2, RDS, DynamoDB", "S3, SNS/SQS"] },
-  ];
-
-  const focusAreas: SkillCard[] = [
-    { name: t("Engenharia de software", "Software engineering"), icon: <Cog size={16} /> },
-    { name: t("Ciência de dados", "Data science"), icon: <BarChart3 size={16} />, popover: [
-      t("Análise de dados: Pandas", "Data analysis: Pandas"),
-      t("Machine learning: scikit-learn", "Machine learning: scikit-learn"),
-      t("Deep learning: TensorFlow, PyTorch", "Deep learning: TensorFlow, PyTorch"),
-    ]},
-    { name: t("Processamento digital de imagens", "Digital image processing"), icon: <Image size={16} /> },
-    { name: t("Internet das Coisas", "Internet of Things"), icon: <Wifi size={16} />, popover: ["ESP32, MQTT", t("Sensores", "Sensors")] },
-    { name: t("Processamento de linguagem natural", "Natural language processing"), icon: <MessageSquare size={16} />, popover: ["CrewAI, LangChain", "RAG"] },
-  ];
-
-  const renderCard = (card: SkillCard) => {
+  const renderCard = (card: SkillCardProps) => {
     const cardContent = (
       <div
         className="flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-muted/60 border border-border text-sm font-medium text-foreground cursor-pointer
@@ -78,12 +75,13 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-24 md:py-32">
+    <section id="about" className="py-16 md:py-16">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Section title with hover-expanding underline */}
-        <div className="text-center mb-16 group cursor-default">
+        {/* Section title */}
+        <div className="text-center mb-6 group cursor-default">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground inline-block">
-            {t("Sobre ", "About ")}<span className="text-primary">{t("Mim", "Me")}</span>
+            {aboutContent.sectionTitle[language].a}
+            <span className="text-primary">{aboutContent.sectionTitle[language].b}</span>
           </h2>
           <div className="flex justify-center mt-4">
             <div className="h-1 bg-primary rounded-full transition-all duration-300 w-8 group-hover:w-24" />
@@ -91,23 +89,22 @@ const AboutSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-          {/* Left: About text — editorial, no card */}
+          {/* Left: About text */}
           <div className="max-w-[52ch] md:self-center">
-            <p className="text-xs uppercase tracking-widest text-primary/80 font-medium mb-4">
-              {t("Quem sou eu", "Who I am")}
+            <p className="text-base  uppercase tracking-widest text-primary/80 font-medium mb-4">
+              {tr(aboutContent.leftKicker)}
             </p>
-            <p className="text-muted-foreground leading-[1.85] mb-6 text-[0.95rem]">
-              {t(
-                "Sou estudante do 9º semestre de Engenharia de Computação na Universidade Federal do Ceará. Atualmente, atuo como bolsista de P&D no GREat Lab, onde colaboro na construção de serviços e interfaces para uma plataforma de monitoramento de qualidade de vida, integrando dados biométricos de wearables e avaliações clínicas.",
-                "I am a 9th semester Computer Engineering student at the Federal University of Ceará. Currently, I work as an R&D fellow at GREat Lab, where I collaborate in the construction of services and interfaces for a quality of life monitoring platform, integrating biometric data from wearables and clinical evaluations."
-              )}
-            </p>
-            <p className="text-muted-foreground leading-[1.85] text-[0.95rem]">
-              {t(
-                "Minha trajetória acadêmica também inclui a participação na entrega de sites e sistemas web na empresa júnior do curso, bem como a prototipagem de soluções IoT com sistemas embarcados.",
-                "My academic background also includes participating in the delivery of websites and web systems at the junior company of the course, as well as prototyping IoT solutions with embedded systems."
-              )}
-            </p>
+            
+            {aboutContent.paragraphs.map((paragraph, index) => (
+              <p 
+                key={index} 
+                className={`text-muted-foreground text-justify leading-[1.85] text-[1rem] ${
+                  index < aboutContent.paragraphs.length - 1 ? "mb-6" : ""
+                }`}
+              >
+                {tr(paragraph)}
+              </p>
+            ))}
           </div>
 
           {/* Right: Skills */}
@@ -115,20 +112,38 @@ const AboutSection = () => {
             {/* Tools */}
             <div>
               <h3 className="text-lg font-display font-semibold text-foreground mb-4">
-                {t("Ferramentas", "Tools")}
+                {tr(aboutContent.toolsTitle)}
               </h3>
               <div className="grid grid-cols-2 gap-2">
-                {tools.map(renderCard)}
+                {aboutContent.tools.map((tool) => {
+                  const Icon = toolsIcons[tool.name] || Code2;
+                  return renderCard({
+                    name: tool.name,
+                    icon: <Icon size={16} />,
+                    popover: tool.popover
+                  });
+                })}
               </div>
             </div>
 
             {/* Focus Areas */}
             <div>
               <h3 className="text-lg font-display font-semibold text-foreground mb-4">
-                {t("Temáticas", "Focus Areas")}
+                {tr(aboutContent.focusAreasTitle)}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {focusAreas.map(renderCard)}
+                {aboutContent.focusAreas.map((area) => {
+                  const iconKey = area.name.en;
+                  const Icon = focusIcons[iconKey] || Cog;
+                  
+                  const translatedPopover = area.popover?.map(item => tr(item));
+
+                  return renderCard({
+                    name: tr(area.name),
+                    icon: <Icon size={24} />,
+                    popover: translatedPopover
+                  });
+                })}
               </div>
             </div>
           </div>
