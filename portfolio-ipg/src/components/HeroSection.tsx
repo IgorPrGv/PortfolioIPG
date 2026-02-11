@@ -41,7 +41,7 @@ const HeroSection = () => {
             {/* Buttons */}
             <div className="flex flex-wrap gap-3 justify-center md:justify-start">
               <a
-                href={heroContent.cvHref}
+                href={tr(heroContent.cvHref)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:scale-105 hover:shadow-lg hover:shadow-primary/20 transition-all duration-200"
