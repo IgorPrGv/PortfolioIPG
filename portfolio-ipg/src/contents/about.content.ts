@@ -38,7 +38,7 @@ export const aboutContent = {
     { name: "Java & Spring Boot" },
     { name: "JavaScript/TypeScript" },
     { name: "React & Tailwind" },
-    { name: "ExpressJS" },
+    { name: "ExpressJs (NodeJs)" },
     { name: "PostgreSQL & MongoDB" },
     { name: "Docker" },
     { name: "Git" },
