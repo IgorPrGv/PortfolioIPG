@@ -6,7 +6,7 @@ import {
   BarChart3,
   Image as ImageIcon,
   Wifi,
-  MessageSquare,
+  Bot,
   Plus,
 } from "lucide-react";
 import {
@@ -81,7 +81,7 @@ const focusIcons: Record<string, React.ElementType> = {
   "Data science": BarChart3,
   "Digital image processing": ImageIcon,
   "Internet of Things": Wifi,
-  "Natural language processing": MessageSquare,
+  "Agentic AI": Bot,
 };
 
 interface CardProps {

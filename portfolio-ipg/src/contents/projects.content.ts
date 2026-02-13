@@ -4,6 +4,7 @@ import nuvemImg from "../assets/projects/Nuvem_1.png";
 import avantiImg from "../assets/projects/avanti_2.png";
 import bracoImg from "../assets/projects/braco.jpg";
 import pdiImg from "../assets/projects/pdi.png";
+import diabetesImg from "../assets/projects/DT2M_1.png";
 
 export const projectsContent = {
   sectionTitle: {
@@ -83,6 +84,32 @@ export const projectsContent = {
       imageUrl: pdiImg,
       techs: ["React", "TypeScript", "TailwindCSS", "shadcn/ui"],
       codeUrl: "https://github.com/ProjetoFinalPDI/frontend",
+    },
+    {
+      title: {
+        pt: "DiabetesAI Care: Ecossistema de Agentes para Diabetes Tipo 2",
+        en: "DiabetesAI Care: Agent Ecosystem for Type 2 Diabetes",
+      },
+      description: {
+        pt: "Protótipo de um ecossistema multiagente para apoiar idosos com Diabetes Tipo 2 no dia a dia. Os dois agentes centrais são o Agente Nutricional, que usa RAG em uma base de dados alimentar para montar planos alimentares personalizados, e o Agente Diabético, que analisa séries temporais com um modelo LSTM previamente treinado com uma base de dados (ShanghaiT2DM) e prevê eventos glicêmicos para emitir alertas e indicadores.",
+        en: "Prototype of a multi-agent ecosystem designed to support elderly people with Type 2 Diabetes in their daily routine. The two core agents are the Nutritional Agent, which uses RAG over a food database to build personalized meal plans, and the Diabetic Agent, which analyzes time series using an LSTM model previously trained on the ShanghaiT2DM dataset and predicts glycemic events to generate alerts and key indicators.",
+      },
+      imageUrl: diabetesImg, // importe uma imagem do projeto em ../assets/projects/
+      techs: [
+        "Python",
+        "FastAPI",
+        "SQLAlchemy",
+        "PostgreSQL",
+        "ChromaDB",
+        "AngularJS",
+        "CrewAI",
+        "LangChain",
+        "Gemini API",
+        "RAG",
+        "LSTM",
+        "Docker",
+      ],
+      codeUrl: "https://github.com/IgorPrGv/DiabetesAI",
     },
   ] satisfies ProjectContent[],
 

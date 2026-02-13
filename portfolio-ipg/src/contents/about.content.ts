@@ -28,7 +28,7 @@ export const aboutContent = {
   } satisfies I18nText,
 
   focusAreasTitle: {
-    pt: "Temáticas",
+    pt: "Temáticas de interesse",
     en: "Focus Areas",
   } satisfies I18nText,
 
@@ -68,7 +68,7 @@ export const aboutContent = {
       ],
     },
     {
-      name: { pt: "Processamento de linguagem natural", en: "Natural language processing" },
+      name: { pt: "Agentes de IA", en: "Agentic AI" },
       popover: [
         { pt: "CrewAI, LangChain", en: "CrewAI, LangChain" },
         { pt: "RAG", en: "RAG" },
