@@ -67,12 +67,12 @@ export const aboutContent = {
         { pt: "Sensores", en: "Sensors" },
       ],
     },
-    {
-      name: { pt: "Agentes de IA", en: "Agentic AI" },
-      popover: [
-        { pt: "CrewAI, LangChain", en: "CrewAI, LangChain" },
-        { pt: "RAG", en: "RAG" },
-      ],
-    },
+    // {
+    //   name: { pt: "Agentes de IA", en: "Agentic AI" },
+    //   popover: [
+    //     { pt: "CrewAI, LangChain", en: "CrewAI, LangChain" },
+    //     { pt: "RAG", en: "RAG" },
+    //   ],
+    // },
   ] satisfies SkillCardContent[],
 } as const;

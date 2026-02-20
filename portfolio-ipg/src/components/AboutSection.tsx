@@ -81,7 +81,7 @@ const focusIcons: Record<string, React.ElementType> = {
   "Data science": BarChart3,
   "Digital image processing": ImageIcon,
   "Internet of Things": Wifi,
-  "Agentic AI": Bot,
+  // "Agentic AI": Bot,
 };
 
 interface CardProps {
