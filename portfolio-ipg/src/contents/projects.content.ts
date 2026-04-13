@@ -74,19 +74,6 @@ export const projectsContent = {
     },
     {
       title: {
-        pt: "Aplicação Web para Segmentação Pulmonar em Imagens de TC",
-        en: "Web Application for Lung Segmentation in CT Images",
-      },
-      description: {
-        pt: "Interface web que gerencia arquivos DICOM, o padrão internacional para imagens médicas, integrando-se a uma API dedicada que executa o pré-processamento, a segmentação e o pós-processamento. O sistema oferece ainda ferramentas para refinamento manual das segmentações, controles de zoom, opções para visualização de densidades e download dos resultados finais.",
-        en: "Web interface that manages DICOM files, the international standard for medical imaging, integrating with a dedicated API that performs pre-processing, segmentation, and post-processing. The system also features tools for manual segmentation refinement, zoom controls, options for density visualization and final result download.",
-      },
-      imageUrl: pdiImg,
-      techs: ["React", "TypeScript", "TailwindCSS", "shadcn/ui"],
-      codeUrl: "https://github.com/ProjetoFinalPDI/frontend",
-    },
-    {
-      title: {
         pt: "DiabetesAI Care: Ecossistema de Agentes para Diabetes Tipo 2",
         en: "DiabetesAI Care: Agent Ecosystem for Type 2 Diabetes",
       },
@@ -103,7 +90,6 @@ export const projectsContent = {
         "ChromaDB",
         "AngularJS",
         "CrewAI",
-        "LangChain",
         "Gemini API",
         "RAG",
         "LSTM",
@@ -111,6 +97,20 @@ export const projectsContent = {
       ],
       codeUrl: "https://github.com/IgorPrGv/DiabetesAI",
     },
+    
+    {
+      title: {
+        pt: "Aplicação Web para Segmentação Pulmonar em Imagens de TC",
+        en: "Web Application for Lung Segmentation in CT Images",
+      },
+      description: {
+        pt: "Interface web para segmentação pulmonar em tomografias DICOM, integrada a uma API que executa um pipeline de PDI e segmentação automática com métodos clássicos, como Watershed, Otsu, Sauvola, e o método CRISP (contornos ativos). A aplicação permite configurar pré-processamento, pós-processamento por área mínima e oferece ferramentas de visualização, ajuste manual, e download dos resultados.",
+        en: "Web interface for lung segmentation in DICOM CT scans, integrated with an API that runs a digital image processing pipeline and automatic segmentation using classical methods such as Watershed, Otsu, and Sauvola, as well as the CRISP method (active contours). The application allows configuring pre-processing, minimum-area post-processing, and provides visualization tools, manual refinement, and downloading the results.",
+      },
+      imageUrl: pdiImg,
+      techs: ["React", "TypeScript", "TailwindCSS", "Python", "Watershed", "Sobel", "CRISP"],
+      codeUrl: "https://github.com/ProjetoFinalPDI/frontend",
+    }
   ] satisfies ProjectContent[],
 
   maxVisibleTags: 10,
