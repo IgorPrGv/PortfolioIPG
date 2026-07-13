@@ -4,8 +4,8 @@ import { aboutContent } from "../contents/about.content";
 import {
   Cog,
   BarChart3,
-  Image as ImageIcon,
-  Wifi,
+  Eye,
+  Cpu,
   Bot,
   Plus,
 } from "lucide-react";
@@ -79,8 +79,8 @@ const toolsImages: Record<string, string | string[]> = {
 const focusIcons: Record<string, React.ElementType> = {
   "Software engineering": Cog,
   "Data science": BarChart3,
-  "Digital image processing": ImageIcon,
-  "Internet of Things": Wifi,
+  "Computer vision": Eye,
+  "Embedded systems": Cpu,
   // "Agentic AI": Bot,
 };
 

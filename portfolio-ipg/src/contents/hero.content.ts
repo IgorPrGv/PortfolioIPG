@@ -1,5 +1,5 @@
 import type { I18nText, SocialLink } from "./types";
-import resumePT from "../assets/resume/IgorPereira_S-PT-BR.pdf";
+import resumePT from "../assets/resume/Igor_Pereira_S-PT-BR.pdf";
 import resumeEN from "../assets/resume/IgorPereira_S-EN.pdf";
 
 export const heroContent = {

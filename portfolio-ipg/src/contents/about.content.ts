@@ -58,13 +58,13 @@ export const aboutContent = {
       ],
     },
     {
-      name: { pt: "Processamento digital de imagens", en: "Digital image processing" },
+      name: { pt: "Visão computacional", en: "Computer vision" },
     },
     {
-      name: { pt: "Internet das Coisas", en: "Internet of Things" },
+      name: { pt: "Sistemas embarcados", en: "Embedded systems" },
       popover: [
-        { pt: "ESP32, MQTT", en: "ESP32, MQTT" },
-        { pt: "Sensores", en: "Sensors" },
+        { pt: "ESP32, STM32", en: "ESP32, STM32" },
+        { pt: "C/C++, sensores", en: "C/C++, sensors" },
       ],
     },
     // {

@@ -5,6 +5,7 @@ import avantiImg from "../assets/projects/avanti_2.png";
 import bracoImg from "../assets/projects/braco.jpg";
 import pdiImg from "../assets/projects/pdi.png";
 import diabetesImg from "../assets/projects/DT2M_1.png";
+import biosignalsImg from "../assets/projects/biosignals_eeg_preprocessing.png";
 
 export const projectsContent = {
   sectionTitle: {
@@ -45,6 +46,19 @@ export const projectsContent = {
       imageUrl: nuvemImg,
       techs: ["TypeScript", "Express.Js", "React", "Docker", "PostgreSQL", "AWS SDK", "MinIO/S3", "DynamoDB", "RabbitMQ"],
       codeUrl: "https://github.com/IgorPrGv/nuvem-project-GameWebsite",
+    },
+    {
+      title: {
+        pt: "Pipeline para Detecção de Crises Epilépticas em EEG",
+        en: "Pipeline for Epileptic Seizure Detection in EEG",
+      },
+      description: {
+        pt: "Projeto de processamento de biossinais voltado à detecção de crises epilépticas em sinais de EEG, com limpeza do sinal, extração de atributos nos domínios do tempo, frequência e tempo-frequência, seleção de variáveis e avaliação de modelos em um cenário de forte desbalanceamento de classes.",
+        en: "Biosignal processing project focused on epileptic seizure detection in EEG signals, covering signal cleaning, feature extraction in time, frequency, and time-frequency domains, feature selection, and model evaluation under strong class imbalance.",
+      },
+      techs: ["Python", "EEG", "Pandas", "Scikit-learn", "XGBoost", "LASSO", "Wavelets", "PCA", "UMAP"],
+      imageUrl: biosignalsImg,
+      codeUrl: "https://github.com/kelvinleandro/biosignals",
     },
     {
       title: {
@@ -97,7 +111,6 @@ export const projectsContent = {
       ],
       codeUrl: "https://github.com/IgorPrGv/DiabetesAI",
     },
-    
     {
       title: {
         pt: "Aplicação Web para Segmentação Pulmonar em Imagens de TC",
